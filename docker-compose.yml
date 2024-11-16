@@ -1,0 +1,12 @@
+services:
+    chroma:
+        container_name: chroma
+        image: chromadb/chroma:0.5.15
+        environment:
+            CHROMA_HOST_PORT: 8001
+            CHROMA_SERVER_AUTH_CREDENTIALS: admin:admin
+            CHROMA_SERVER_AUTH_PROVIDER: chromadb.auth.basic_authn.BasicAuthenticationServerProvider
+        ports:
+            - 8001:8001
+        profiles:
+            - chroma
